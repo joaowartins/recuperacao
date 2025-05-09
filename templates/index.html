@@ -1,15 +1,13 @@
-{# Extende o template base.html para herdar sua estrutura e estilos #}
 {% extends "base.html" %}
-{# Define o bloco de conteúdo que será inserido no template base #}
 {% block content %}
-    {# Título da página do dashboard #}
     <h1>Project Dashboard</h1>
-    {# Link com botão para criar um novo projeto, apontando para a rota novo_projeto #}
     <a href="{{ url_for('novo_projeto') }}"><button class="button">Novo Projeto</button></a>
-    {# Loop para exibir cada projeto da lista de projetos #}
     {% for project in projects %}
         <div class="dashboard">
-            {# Exibe o nome do projeto dinamicamente #}
             <p>Projeto: {{ project.name }}</p>
-            {# Link com botão para visualizar os detalhes do projeto, passando o ID do projeto #}
-            <a href="{{ url_for('ver_projeto', project_id=project.id) }}"><button class
+            <a href="{{ url_for('ver_projeto', project_id=project.id) }}"><button class="button">Visualizar</button></a>
+            <a href="{{ url_for('editar_projeto', project_id=project.id) }}"><button class="button">Editar</button></a>
+            <a href="{{ url_for('deletar_projeto', project_id=project.id) }}"><button class="button">Excluir</button></a>
+        </div>
+    {% endfor %}
+{% endblock %}

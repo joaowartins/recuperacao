@@ -1,25 +1,15 @@
-{# Extende o template base.html para herdar sua estrutura e estilos #}
 {% extends "base.html" %}
-{# Define o bloco de conteúdo que será inserido no template base #}
 {% block content %}
-    {# Título da página exibindo o nome do projeto dinamicamente #}
+
     <h1>Projeto: {{ project.name }}</h1>
-    {# Parágrafo exibindo a descrição do projeto dinamicamente #}
     <p>Descrição: {{ project.description }}</p>
-    {# Link com botão para criar uma nova tarefa, passando o ID do projeto #}
     <a href="{{ url_for('nova_tarefa', project_id=project.id) }}"><button class="button">Nova Tarefa</button></a>
-    {# Link com botão para voltar ao dashboard #}
     <a href="{{ url_for('dashboard') }}"><button class="button">Voltar</button></a>
-    {# Subtítulo para a seção de tarefas #}
     <h2>Tarefas</h2>
-    {# Loop para exibir cada tarefa associada ao projeto #}
     {% for task in tasks %}
         <div class="dashboard">
-            {# Exibe o título e o status de cada tarefa #}
             <p>Tarefa: {{ task.title }} - Status: {{ task.status }}</p>
-            {# Link com botão para editar a tarefa, passando os IDs do projeto e da tarefa #}
             <a href="{{ url_for('editar_tarefa', project_id=project.id, task_id=task.id) }}"><button class="button">Editar</button></a>
-            {# Link com botão para excluir a tarefa, passando os IDs do projeto e da tarefa #}
             <a href="{{ url_for('deletar_tarefa', project_id=project.id, task_id=task.id) }}"><button class="button">Excluir</button></a>
         </div>
     {% endfor %}

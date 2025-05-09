@@ -5,38 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Estilização personalizada para o projeto -->
     <style>
+        /* Define o estilo do corpo da página */
         body {
-            background-color: #2d1b1b;
-            color: #ff0000;
+            background-color: #2d1b1b; /* Cor de fundo escura */
+            color: #ff0000; /* Cor do texto em vermelho */
         }
+        /* Estilo para os blocos do dashboard */
         .dashboard {
-            border: 2px solid #ff0000;
-            padding: 20px;
-            margin: 20px;
+            border: 2px solid #ff0000; /* Borda vermelha de 2px */
+            padding: 20px; /* Espaçamento interno de 20px */
+            margin: 20px; /* Margem externa de 20px */
         }
+        /* Estilo para os botões */
         .button {
-            background-color: #ff0000;
-            color: white;
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
+            background-color: #ff0000; /* Fundo vermelho */
+            color: white; /* Texto branco */
+            padding: 10px 20px; /* Espaçamento interno */
+            margin: 5px; /* Margem externa */
+            border: none; /* Sem borda */
+            cursor: pointer; /* Cursor de apontar ao passar o mouse */
         }
+        /* Efeito hover para os botões */
         .button:hover {
-            background-color: #cc0000;
+            background-color: #cc0000; /* Fundo vermelho mais escuro ao passar o mouse */
         }
+        /* Estilo para campos de entrada e seletores */
         input, select {
-            background-color: #3d2b2b;
-            color: #ff0000;
-            border: 1px solid #ff0000;
-            padding: 5px;
-            margin: 5px;
+            background-color: #3d2b2b; /* Fundo escuro para campos de entrada */
+            color: #ff0000; /* Texto vermelho */
+            border: 1px solid #ff0000; /* Borda vermelha de 1px */
+            padding: 5px; /* Espaçamento interno */
+            margin: 5px; /* Margem externa */
         }
     </style>
 </head>
 <body>
+    <!-- Container principal do dashboard com a classe 'dashboard' para estilização -->
     <div class="dashboard">
+        <!-- Bloco de conteúdo dinâmico do Jinja2, onde os templates filhos inserem seu conteúdo -->
         {% block content %}{% endblock %}
     </div>
 </body>

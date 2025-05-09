@@ -1,12 +1,22 @@
+{# Extende o template base.html para herdar sua estrutura e estilos #}
 {% extends "base.html" %}
+{# Define o bloco de conteúdo que será inserido no template base #}
 {% block content %}
+    {# Título da página de edição de projeto #}
     <h1>Editar Projeto</h1>
+    {# Formulário para edição ou criação de projeto, com ação dinâmica baseada na existência do ID do projeto #}
     <form method="POST" action="{{ url_for('salvar_novo_projeto') if not project.id else url_for('editar_projeto', project_id=project.id) }}">
+        {# Rótulo para o campo de nome #}
         <label for="name">Nome:</label><br>
+        {# Campo de texto para o nome do projeto, com valor pré-preenchido e obrigatório #}
         <input type="text" name="name" value="{{ project.name }}" required><br>
+        {# Rótulo para o campo de descrição #}
         <label for="description">Descrição:</label><br>
+        {# Campo de texto para a descrição do projeto, com valor pré-preenchido e obrigatório #}
         <input type="text" name="description" value="{{ project.description }}" required><br>
+        {# Botão de envio do formulário para salvar as alterações #}
         <button type="submit" class="button">Salvar</button>
+        {# Link com botão para cancelar e voltar ao dashboard, sem submeter o formulário #}
         <a href="{{ url_for('dashboard') }}"><button type="button" class="button">Cancelar</button></a>
     </form>
 {% endblock %}

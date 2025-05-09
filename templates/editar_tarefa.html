@@ -1,18 +1,33 @@
+{# Extende o template base.html para herdar sua estrutura e estilos #}
 {% extends "base.html" %}
+{# Define o bloco de conteúdo que será inserido no template base #}
 {% block content %}
+    {# Título da página para editar uma tarefa #}
     <h1>Editar Tarefa</h1>
+    {# Formulário para editar uma tarefa, com ação apontando para a rota editar_tarefa e passando os IDs do projeto e da tarefa #}
     <form method="POST" action="{{ url_for('editar_tarefa', project_id=project_id, task_id=task.id) }}">
+        {# Rótulo para o campo de título #}
         <label for="title">Título:</label><br>
+        {# Campo de texto para o título da tarefa, pré-preenchido com o valor atual e marcado como obrigatório #}
         <input type="text" name="title" value="{{ task.title }}" required><br>
+        {# Rótulo para o campo de descrição #}
         <label for="description">Descrição:</label><br>
+        {# Campo de texto para a descrição da tarefa, pré-preenchido com o valor atual e marcado como obrigatório #}
         <input type="text" name="description" value="{{ task.description }}" required><br>
+        {# Rótulo para o campo de status #}
         <label for="status">Status:</label><br>
+        {# Menu suspenso para selecionar o status da tarefa, com opções predefinidas e marcado como obrigatório #}
         <select name="status" required>
+            {# Opção Pendente, selecionada se o status atual da tarefa for Pendente #}
             <option value="Pendente" {% if task.status == 'Pendente' %}selected{% endif %}>Pendente</option>
+            {# Opção Em andamento, selecionada se o status atual da tarefa for Em andamento #}
             <option value="Em andamento" {% if task.status == 'Em andamento' %}selected{% endif %}>Em andamento</option>
+            {# Opção Concluída, selecionada se o status atual da tarefa for Concluída #}
             <option value="Concluída" {% if task.status == 'Concluída' %}selected{% endif %}>Concluída</option>
         </select><br>
+        {# Botão de envio do formulário para salvar as alterações na tarefa #}
         <button type="submit" class="button">Salvar</button>
+        {# Link com botão para cancelar e voltar à página de visualização do projeto, sem submeter o formulário #}
         <a href="{{ url_for('ver_projeto', project_id=project_id) }}"><button type="button" class="button">Cancelar</button></a>
     </form>
 {% endblock %}

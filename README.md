@@ -88,16 +88,16 @@ recuperacao/
 
 IMAGENS:
 
-![image.png](attachment:105a1c5a-1fb6-4945-984f-54c26f361dd9:image.png)
+![image.png](https://github.com/joaowartins/recuperacao/blob/main/static/img/image.png)
 
 Adicionar novo projeto:
 
-![image.png](attachment:b2bef1bb-2e37-4f38-9b23-214ba92a85ad:image.png)
+![image.png](https://github.com/joaowartins/recuperacao/blob/main/static/img/image%20(1).png)
 
 Visualização do projeto adicionado:
 
-![image.png](attachment:ae86278f-1548-439b-b636-6ca73df191b0:image.png)
+![image.png](https://github.com/joaowartins/recuperacao/blob/main/static/img/image%20(2).png)
 
 Adicionar subtarefas no projeto:
 
-![image.png](attachment:620b38fe-e7ab-4a38-aa30-2d3e4d619897:image.png)
+![image.png](https://github.com/joaowartins/recuperacao/blob/main/static/img/image%20(3).png)

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Nova Tarefa</h1>
+    <form method="POST" action="{{ url_for('nova_tarefa', project_id=project_id) }}">
+        <label for="title">Título:</label><br>
+        <input type="text" name="title" required><br>
+        <label for="description">Descrição:</label><br>
+        <input type="text" name="description" required><br>
+        <label for="status">Status:</label><br>
+        <select name="status" required>
+            <option value="Pendente">Pendente</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Concluída">Concluída</option>
+        </select><br>
+        <button type="submit" class="button">Adicionar</button>
+        <a href="{{ url_for('ver_projeto', project_id=project_id) }}"><button type="button" class="button">Cancelar</button></a>
+    </form>
+{% endblock %}

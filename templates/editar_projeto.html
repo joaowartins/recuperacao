@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Editar Projeto</h1>
+    <form method="POST" action="{{ url_for('salvar_novo_projeto') if not project.id else url_for('editar_projeto', project_id=project.id) }}">
+        <label for="name">Nome:</label><br>
+        <input type="text" name="name" value="{{ project.name }}" required><br>
+        <label for="description">Descrição:</label><br>
+        <input type="text" name="description" value="{{ project.description }}" required><br>
+        <button type="submit" class="button">Salvar</button>
+        <a href="{{ url_for('dashboard') }}"><button type="button" class="button">Cancelar</button></a>
+    </form>
+{% endblock %}

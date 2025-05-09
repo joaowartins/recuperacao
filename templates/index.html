@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Project Dashboard</h1>
+    <a href="{{ url_for('novo_projeto') }}"><button class="button">Novo Projeto</button></a>
+    {% for project in projects %}
+        <div class="dashboard">
+            <p>Projeto: {{ project.name }}</p>
+            <a href="{{ url_for('ver_projeto', project_id=project.id) }}"><button class="button">Visualizar</button></a>
+            <a href="{{ url_for('editar_projeto', project_id=project.id) }}"><button class="button">Editar</button></a>
+            <a href="{{ url_for('deletar_projeto', project_id=project.id) }}"><button class="button">Excluir</button></a>
+        </div>
+    {% endfor %}
+{% endblock %}

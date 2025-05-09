@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Projeto: {{ project.name }}</h1>
+    <p>Descrição: {{ project.description }}</p>
+    <a href="{{ url_for('nova_tarefa', project_id=project.id) }}"><button class="button">Nova Tarefa</button></a>
+    <a href="{{ url_for('dashboard') }}"><button class="button">Voltar</button></a>
+    <h2>Tarefas</h2>
+    {% for task in tasks %}
+        <div class="dashboard">
+            <p>Tarefa: {{ task.title }} - Status: {{ task.status }}</p>
+            <a href="{{ url_for('editar_tarefa', project_id=project.id, task_id=task.id) }}"><button class="button">Editar</button></a>
+            <a href="{{ url_for('deletar_tarefa', project_id=project.id, task_id=task.id) }}"><button class="button">Excluir</button></a>
+        </div>
+    {% endfor %}
+{% endblock %}
